@@ -6,15 +6,19 @@
 
 */
 
-
-*{
-  box-sizing: border-box;
-  /* background-color: rgb(240, 246, 250); */
-  font-family: 'Times New Roman', Times, serif;
-  /* color: #243038; */
-
+/* Using our downloaded fonts clicker script*/
+@font-face {
+  font-family: 'Clicker Script'; /* Choose a name for the font */
+  src: url('./fonts/ClickerScript-Regular.ttf') format('truetype'); /* Path to your font file */
+  font-weight: normal;
+  font-style: normal;
 }
 
+/* Define universal styles */
+*{
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
 
 body{
   margin: 0;
@@ -24,20 +28,10 @@ body{
   line-height: 1.5;
   font-family: 'Poppins', sans-serif;
   background-color: rgb(240, 246, 250);
-
-
-}
-
-/* Using our downloaded fonts clicker script*/
-@font-face {
-  font-family: 'Clicker Script'; /* Choose a name for the font */
-  src: url('./fonts/ClickerScript-Regular.ttf') format('truetype'); /* Path to your font file */
-  font-weight: normal;
-  font-style: normal;
 }
 
 
-/* ST */
+/* HEADER SECTION OR MENU */
 /* Start to style our header */
 .header{
   background-color: rgb(255, 255, 255);
@@ -45,8 +39,7 @@ body{
   height: 100%;
   position: fixed;
 }
-/* STYLING INDIVIDUAL PARTS OF THE MAIN header */
-/* logo */
+/* styling the logo*/
 .logo{
   background-color: rgb(255, 255, 255);
   text-align: center;
@@ -57,8 +50,6 @@ body{
   position: relative;
   letter-spacing: 5px;
   font-family: 'Poppins'
-
-  
 }
 
 .logo ::before{
@@ -86,20 +77,28 @@ body{
   right: 0;
 }
 
-
-
 .logo span{
   font-family: 'Clicker Script', recursive;
   color: rgb(38, 38, 38);
   font-size: 50px;
 }
 
+
 /* navigation links */
+.menu-icon {
+  display: none; 
+  font-size: 30px;
+  cursor: pointer;
+  color: red;
+  margin-left: 5%;
+  /* margin-top: 5%; */
+}
+
 .menu{
   /* background-color: coral; */
   margin: 97px 10px 0px 10px;
   align-items: center;
-  padding-left: 15px;
+  padding-left: 13px;
 }
 
 li{
@@ -117,30 +116,25 @@ li a{
   color: black;
   padding-bottom: 10px;
   /* background-color: burlywood; */
-
 }
-
 li {
   box-shadow: 0px 1px rgb(245, 225, 225);
 }
-
 li:hover{
   background-color: antiquewhite;
   transform: scale(1.05);
 }
-
-
 .nav-icon{
   width: 15%;
   cursor: pointer;
 }
-
 .home-nav{
   color: red;
 }
 
 
-/* START STYLING OUR MAIN */
+/* START STYLING THE MENU SECTION */
+
 /* set the scale for our containers */
 .main{
   /* background-color: rgb(240, 246, 250); */
@@ -151,19 +145,22 @@ li:hover{
   margin-left: 250px; 
 }
 
+
 /* STYLING INDIVIDUAL PARTS OF THE MAIN CONTENT */
 
-/* trial */
+/* HOME SECTION */
+
 .home-sub-section{
   /* background-color: rgb(38, 101, 168); */
   display: flex;
+  flex-direction: row;
   width: 100%;
   margin: 0;
   height: 100%;
 }
 
 .home-content{
-  width: 65%;
+  width: 67%;
   height: 100%;
   margin: 20px 5px;
   font-family: 'Poppins';
@@ -176,107 +173,34 @@ li:hover{
   font-family: 'Clicker Script', cursive;
   font-size: 32px;
   font-weight: 700;
-
 }
 
+.home-content p{
+  text-align: left;
+}
 .image-home{
-  /* display: flex; */
   width: 30%;
-  margin: 20px 0px;
+  margin: 40px 0 0 0;
   position: relative;
-  /* background-color: aquamarine; */
   box-sizing: border-box;
-  /* border: 1px solid black; */
-
-  
 }
 
 .mike{
-  height: 380px;
-  padding: 15px 0 0 35px;
+  max-width: 100%;
+  height: auto;
+  padding: 35px 35px 35px 35px;
 }
-
-.mike ::before{
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-top: 7px solid red;
-  border-right: 7px solid red;
-  top: 65px;
-  left: 0px;
-}
-
-
-.mike ::after{
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-bottom: 7px solid red;
-  border-right: 7px solid red;
-  bottom: 0px;
-  right: 0px;
-}
-
-
-
-
-
-
-
-
-.home-section{
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background-color: brown;
-  margin: 0;
-}
-.content-home{
-  width: 60%;
-  background-color: blue;
-  align-items: center;
-  margin: 20px 5px;
-  /* padding: 100px 0px 10px 15px; */
-  font-family: 'Poppins';
-  font-size: 20px;
-}
-
-.content h1 span{
-  color: red;
-  font-family: 'Clicker Script', cursive;
-  font-size: 32px;
-  font-weight: 700;
-
-}
-
-
-
-.myimage{
-  box-sizing: border-box;
-  height: 87%;
-  width: 85%;
-  margin: 20% 0% 0% 7%;
-  padding: 10% 0%;
-  
-  position: relative;
-}
-
-.image::before{
+.image-home::before{
   content: '';
   position: absolute;
   width: 50px;
   height: 50px;
   border-top: 7px solid red;
   border-left: 7px solid red;
-  top: 65px;
+  top: 0px;
   left: 0px;
 }
-
-
-
-.image::after{
+.image-home::after{
   content: '';
   position: absolute;
   width: 50px;
@@ -287,16 +211,13 @@ li:hover{
   right: 0px;
 }
 
-
-
-
-/* STYLE THE BUTTON */
-
+/* style the button */
 button{
   /* width:100px; */
   font-size: 16px;
   font-weight: 500;
   padding: 12px 20px;
+  margin-top: 15px;
   color: white;
   border-radius: 40px;
   background-color: red;
@@ -305,18 +226,9 @@ button{
   display: inline-block;
   transition: all 0.3s ease;
 }
-
-
 button:hover{
   transform: scale(1.05);
 }
-.settings{
-  display: block;
-  width: 5%;
-  /* background-color: blueviolet; */
-}
-
-
 /* HOME SECTION END */
 
 
@@ -389,6 +301,7 @@ button:hover{
   margin: 0;
   color: #243038;
   font-size: 17px;
+  text-align: left;
 }
 
 
@@ -404,13 +317,10 @@ button:hover{
 .information{
   flex: 0 0 60%;
   max-width: 60%;
-
-  /* background-color: aqua; */
 }
 .demo{
   display: flex;
   margin-bottom: 20px;
-  
 }
 .user{
   flex: 0 0 50%;
@@ -450,7 +360,6 @@ button:hover{
   flex: 0 0 40%;
   /* background-color: blueviolet; */
   max-width:40%;
-  
 }
 
 .row{
@@ -461,7 +370,6 @@ button:hover{
   display: flex;
   padding-top: 15px;
   flex: 0 0 50%;
-  
 }
 
 
@@ -477,7 +385,6 @@ button:hover{
 
 .language{
   flex: 0 0 50%;
-  
 }
 .perc{
   flex: 0 0 50%;
@@ -707,14 +614,11 @@ button:hover{
   width: 100%;
   max-width: 100%;
 
-
-  /* background-color: aqua; */
-
   display: flex;
   flex-wrap: wrap; /* Allows the items to wrap if screen size is small */
   justify-content: space-around; /* Adjust spacing between project divs */
-  padding: 10px;
-  gap: 15px; /* Add some space between the divs */
+  /* padding: 10px; */
+  gap: 15px; 
 }
 
 .project1{
@@ -734,8 +638,11 @@ button:hover{
 }
 
 .project1 img{
-  height: 125px;
-  margin-left: 8px;
+  /* height: 125px; */
+  max-width: 100%;
+  height: auto;
+  /* margin-left: 8px; */
+  /* margin-right: 10px; */
 }
 
 .project1 h6, p{
@@ -777,6 +684,11 @@ button:hover{
   /* background-color: aqua; */
   height: 780px;
 }
+
+.title h3{
+  width: 200px;
+  /* width: 100%; */
+}
 .message{
   /* background-color: aqua; */
   text-align: center;
@@ -794,9 +706,12 @@ button:hover{
   font-weight: bold;
 }
 .reach-me{
-  margin: 5px 25px;
+  /* margin: 5px 25px; */
   display: flex;
-  width: 95%;
+  display: flex;
+  flex-wrap: wrap; /* Allows the items to wrap if screen size is small */
+  justify-content: space-around;
+  padding: 5px;
 }
 .reach-me img{
   height: 30px;
@@ -805,6 +720,8 @@ button:hover{
 }
 .reach{
   flex: 0 0 25%;
+  padding: 20px;
+  
 }
 .reach-me h5{
   font-size: 20px;
@@ -860,7 +777,7 @@ button:hover{
 }
 
 .message-area button{
-  width: 20%;
+  width: 130px;
 }
 
 .border_shadow{
@@ -872,7 +789,7 @@ button:hover{
 /* DISPLAY CONTENT */
 
 .home-sub-section{
-  display: block;
+  display: none;
 }
 .about-section{
   display: none;
@@ -882,4 +799,176 @@ button:hover{
 }
 .contact-page{
   display: none;
+}
+
+
+
+
+
+/* ADDING RESPONSIVENESS */
+
+@media screen and (max-width : 1100px) {
+  /* First hide the menu links and show just the logo as a flex */
+  .menu{
+    display: none;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 100%;
+  } 
+
+  .menu.active {
+    display: flex; /* Show the menu when toggled */
+  }
+  .menu ul li img{
+    height: 25px;
+  }
+  .menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  body{
+    display: block ;
+    /* background-color:cadetblue; */
+  }  
+  .header{
+    /* background-color: aqua; */
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* position: fixed; */
+  }
+  .logo{
+    display: none;
+  }
+  
+  
+ .menu-icon{
+  display: block;
+ }
+
+
+  /* .header{
+    display: none;
+  } */
+  .main {
+    margin-left: 0px;
+    width: 100%;
+    /* background-color: blueviolet; */
+  }
+  .info-item span{
+    display: block;
+    margin-left: 0px;
+  }
+  .information .info-item p{
+    text-align: left;
+  }
+  
+}
+
+
+@media screen and (max-width : 900px) {
+  .home-sub-section {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  /* Use order to bring second div above the first */
+  .home-content {
+    order: 2; /* Move this below */
+    width: 100%;
+  }
+
+  .image-home {
+    order: 1; /* Move this above */
+    width: 100%;
+  }
+
+  .project1{
+    width: 45%;
+  }
+
+  .image-home::after{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-bottom: 7px solid red;
+    border-right: 7px solid red;
+    bottom: 0px;
+    right: 250px;
+  }
+
+
+  .home-content h2{
+    font-size: 35px;
+  }
+
+  .home-content h1{
+    font-size: 45px;
+  }
+
+  .home-content p{
+    font-size: 30px;
+  }
+
+  .send-msg{
+    /* font-size: 25px; */
+    background-color: aqua;
+    width: 100%;
+  }
+  body{
+    font-size: 25px;
+  }
+
+  .title h3{
+    font-size: 40px;
+  }
+  .introduction h4{
+    font-size: 35px;
+  }
+
+  .introduction p{
+    font-size: 27px;
+  }
+
+  .education-experience{
+    display: block;
+  }
+}
+
+
+@media screen and (max-width : 710px) {
+  .demographics{
+    display: block;
+    width: 100%;
+  }
+  .information{
+    width: 100%;
+    max-width: 100%;
+  }
+  .information .info-item p{
+    font-size: 25px;
+
+  }
+  .information .info-item span{
+    font-size: 20px;
+  }
+  .skills{
+    width: 100%;
+    max-width: 100%;
+  }
+  .reach{
+    flex: 0 0 40%;
+  }
+}
+
+@media screen and (max-width : 510px) {
+  .project1{
+    width: 90%;
+  }
+  .reach{
+    flex: 0 0 90%;
+  }
 }
